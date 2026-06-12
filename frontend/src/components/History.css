@@ -1,0 +1,66 @@
+.history-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 2rem auto;
+    background-color: rgba(20, 20, 20, 0.75);
+    border-radius: 1rem;
+    padding: 2rem;
+    backdrop-filter: blur(6px);
+    animation: fadeInUp 0.7s ease-out;
+}
+
+.history-list {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 1s ease, opacity 1s ease;
+}
+
+.history-list.open {
+    max-height: 1500px;
+    opacity: 1;
+}
+
+button {
+    padding: 0.75rem 1rem;
+    margin: 1rem 0;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: #b08d57;
+    color: #1a1a1a;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+button:hover {
+    background-color: #9a7948;
+    transform: translateY(-1px);
+}
+
+.history-card {
+    background: rgba(20, 20, 20, 0.75);
+    border: 1px solid #444444;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    backdrop-filter: blur(6px);
+    animation: fadeInUp 0.7s ease-out;
+}
+
+.history-details {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.7s ease-in-out, opacity 0.7s ease-in-out;
+}
+
+.history-details.open {
+    max-height: 500px;
+    opacity: 1;
+}
+
+.history-card p {
+    margin: 0.8rem 0;
+    line-height: 1.5;
+}

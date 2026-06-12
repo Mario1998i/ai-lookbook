@@ -1,0 +1,19 @@
+.spinner {
+    width: 4rem;
+    height: 4rem;
+    border: 5px solid white;
+    border-radius: 50%;
+    border-top: 5px solid #d4af37;
+    margin: 4rem auto;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}

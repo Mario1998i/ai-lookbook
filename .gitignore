@@ -1,0 +1,16 @@
+# OpenAI
+.env
+backend/.env
+
+# Composer
+backend/vendor/
+
+# React
+frontend/node_modules/
+frontend/dist/
+
+# VS Code
+.vscode/
+
+# Sistema
+.DS_Store
