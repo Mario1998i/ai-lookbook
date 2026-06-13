@@ -13,6 +13,20 @@ Web application that analyzes fashion items from uploaded images and generates p
 - Evaluation history stored in MySQL
 - Expand/collapse details for previous evaluations
 
+## Screenshots
+
+### Home
+
+![Home](screenshots/home.png)
+
+### Evaluation Result
+
+![Evaluation Result](screenshots/result.png)
+
+### Evaluation History
+
+![Evaluation History](screenshots/history.png)
+
 ## Technologies Used
 
 ### Frontend
