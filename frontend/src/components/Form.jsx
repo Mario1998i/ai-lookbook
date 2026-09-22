@@ -3,6 +3,13 @@ import axios from "axios";
 import Spinner from "./Spinner";
 import "./Form.css";
 
+const LOADING_MESSAGES = [
+    "📤 Carico la foto...",
+    "🔍 Analizzo l'immagine...",
+    "💰 Calcolo il prezzo...",
+    "✨ Preparo i consigli..."
+];
+
 export default function Form() {
     const [brand, setBrand] = useState("");
     const [status, setStatus] = useState("");
@@ -11,6 +18,7 @@ export default function Form() {
     const [isLoading, setIsLoading] = useState(false);
     const [photo, setPhoto] = useState(null);
     const [errors, setErrors] = useState({});
+    const [loadingStep, setLoadingStep] = useState(0);
 
     const resultRef = useRef(null);
 
@@ -49,6 +57,7 @@ export default function Form() {
         formData.append("photo", photo);
 
 
+        setLoadingStep(0);
         setIsLoading(true);
 
         try {
@@ -60,6 +69,18 @@ export default function Form() {
             setIsLoading(false);
         }
     }
+
+    useEffect(() => {
+        if (!isLoading) {
+            return;
+        }
+
+        const timer = setInterval(() => {
+            setLoadingStep((step) => Math.min(step + 1, LOADING_MESSAGES.length - 1));
+        }, 3000);
+
+        return () => clearInterval(timer);
+    }, [isLoading]);
 
         useEffect(() => {
             if (evaluation) {
@@ -75,7 +96,7 @@ export default function Form() {
             {isLoading && (
                 <div className="loading-overlay">
                     <Spinner />
-                    <p>🔍 Analisi del prodotto in corso...</p>
+                    <p>{LOADING_MESSAGES[loadingStep]}</p>
                 </div>
             )}
             <h1 className="app-title">AI Lookbook</h1>
